@@ -19,12 +19,18 @@ import { ref } from 'vue';
 <script setup>
   import { ref } from 'vue';
   const message = ref("setup 語法糖")
+  const count =ref(0)
+
+  const add = ()=>{
+    count.value++
+  }
 </script>
 
 <template>
     <div>
       <input type="text" v-model="message" />
       <h2>第二個 Component {{ message }}</h2>
+      <button @click="add">{{ count }}</button>
     </div>
 </template>
 

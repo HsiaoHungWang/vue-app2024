@@ -19,6 +19,9 @@ import { ref } from 'vue';
         ]
     })
 
+    const iSpanUrl = ref('https://www.ispan.com.tw')
+    const imgUrl = ref('/images/bg3.png')
+
     //console.log(author.value.books.length)
 
 </script>
@@ -44,7 +47,14 @@ import { ref } from 'vue';
 
      <div>星期{{ week[new Date().getDay()] }}</div>
      <div>出版了書籍：{{ author.books.length > 0 ? "是":"否" }}</div>
+     <hr />
+    <!--屬性繫節-->
+    <a href="https://www.ispan.com.tw">iSpan</a> <br />
+    <!-- v-bind:href="Expression" -->
+    <a v-bind:href="iSpanUrl">iSpan</a><br />
 
+    <img src="/images/bg3.png" />
+    <img :src="imgUrl" />
 
     </div>
 </template>

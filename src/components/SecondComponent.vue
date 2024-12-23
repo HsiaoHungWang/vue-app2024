@@ -43,6 +43,7 @@ import { ref } from 'vue';
   const add = async()=>{
     count.value++ //不 wait
 
+    //等到DOMTree更新完成後才往下執行
     await nextTick()
 
     const btn = document.querySelector('#button1')

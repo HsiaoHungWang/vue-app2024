@@ -7,7 +7,9 @@
   }
 </style>
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, onUpdated } from 'vue';
+
+
 
 //表示 DOM Tree 已經產生，可以用 DOM API 及 jQuery 程式去控制它了
 onMounted(()=>{
@@ -15,6 +17,10 @@ onMounted(()=>{
     const theH = document.querySelector('#myH')
     console.log(theH)  //theH.textContent
     console.log(theH.textContent)
+})
+
+onUpdated(()=>{
+  
 })
 
 

@@ -9,7 +9,18 @@ import { ref } from 'vue';
     }
 
     const week = ref(["日", "一", "二", "三", "四", "五", "六"])
-    console.log(new Date().getDay())
+    // console.log(week.value[new Date().getDay()])
+    // console.log(new Date().getDay())
+    const author = ref({    
+        books: [
+            'Vue 2 - Advanced Guide',
+            'Vue 3 - Basic Guide',
+            'Vue 4 - The Mystery'
+        ]
+    })
+
+    //console.log(author.value.books.length)
+
 </script>
 
 <template>
@@ -27,11 +38,12 @@ import { ref } from 'vue';
      <!-- {{ if (true) { return 'Hello' } }} -->
        <!--錯誤寫法，不能做變數需告 -->
      <!--{{ let name = "Jack"  }}-->
-{{i+1}}
+     <p>{{i+1}}</p>
 
      <p>{{ new Date().toLocaleDateString()  }}</p>
 
-     <div>星期{{      }}</div>
+     <div>星期{{ week[new Date().getDay()] }}</div>
+     <div>出版了書籍：{{ author.books.length > 0 ? "是":"否" }}</div>
 
 
     </div>

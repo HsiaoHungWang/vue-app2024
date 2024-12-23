@@ -24,6 +24,8 @@ import { ref } from 'vue';
 
     //console.log(author.value.books.length)
 
+    const id = ref(1)
+
 </script>
 
 <template>
@@ -54,7 +56,11 @@ import { ref } from 'vue';
     <a v-bind:href="iSpanUrl">iSpan</a><br />
 
     <img src="/images/bg3.png" />
-    <img :src="imgUrl" />
+    <img :src="imgUrl" :id />
+    <img src="@/assets/bird150.jpg" alt="bird" />
+
+    <button>Toggle</button>
+    <button :disabled="isDisabled">click</button>
 
     </div>
 </template>

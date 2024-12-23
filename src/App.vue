@@ -1,6 +1,7 @@
 <script setup>
 import BindingComponent from './components/BindingComponent.vue';
 import FirstComponent from './components/FirstComponent.vue';
+import MyComponent from './components/MyComponent.vue';
 
 import SecondComponent from './components/SecondComponent.vue';
 
@@ -9,11 +10,11 @@ import SecondComponent from './components/SecondComponent.vue';
 </script>
 
 <template>
- <h2>Hello Vue!!</h2>
+ <h2>Hello Vue!!!!!</h2>
 <BindingComponent></BindingComponent>
-
-<!-- <FirstComponent></FirstComponent>
-<SecondComponent></SecondComponent> -->
+<!-- <MyComponent></MyComponent>
+ <FirstComponent></FirstComponent>
+<SecondComponent></SecondComponent>  -->
 
 </template>
 

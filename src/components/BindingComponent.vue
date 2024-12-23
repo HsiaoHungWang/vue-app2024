@@ -26,6 +26,11 @@ import { ref } from 'vue';
 
     const id = ref(1)
 
+    const isDisabled = ref(true)
+
+const toggleHandler = ()=>{
+    isDisabled.value  = !isDisabled.value
+}
 </script>
 
 <template>
@@ -59,7 +64,9 @@ import { ref } from 'vue';
     <img :src="imgUrl" :id />
     <img src="@/assets/bird150.jpg" alt="bird" />
 
-    <button>Toggle</button>
+    <button @click="isDisabled = !isDisabled">Toggle1</button>
+    <button @click="toggleHandler">Toggle2</button>
+    <hr />
     <button :disabled="isDisabled">click</button>
 
     </div>

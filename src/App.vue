@@ -5,6 +5,7 @@ import FirstComponent from './components/FirstComponent.vue';
 import MyComponent from './components/MyComponent.vue';
 
 import SecondComponent from './components/SecondComponent.vue';
+import WatchDemo from './components/WatchDemo.vue';
 
 
 
@@ -12,8 +13,9 @@ import SecondComponent from './components/SecondComponent.vue';
 
 <template>
  <h2>Hello Vue!!!!!</h2>
- <ComputedDemo></ComputedDemo>
-<!--<BindingComponent></BindingComponent>
+ <WatchDemo></WatchDemo>
+ <!--<ComputedDemo></ComputedDemo>
+<BindingComponent></BindingComponent>
  <MyComponent></MyComponent>
  <FirstComponent></FirstComponent>
 <SecondComponent></SecondComponent>  -->

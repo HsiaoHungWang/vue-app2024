@@ -23,7 +23,13 @@ const selectedOption = ref("")
  { "name": "萬華區", "code": 108 }
 ]);
 
-
+const bgColor = ref('green')
+const radius = ref('50px')
+const fontSize = ref(16)
+const fontColor = ref('black')
+const isBold = ref(false)
+const isUnder = ref(false)
+const isItalic = ref(false)
 </script>
 
 <template>
@@ -53,10 +59,29 @@ const selectedOption = ref("")
     <li class="page-item" v-for="i in 10" :key="i"><a class="page-link" href="#">{{i}}</a></li>   
   </ul>
 </nav>
+<h3>使用樣式</h3>
+<div style="width:200px;height:200px;border:1px solid green;"
+     :style="{'background-color':bgColor,'border-radius':radius }"></div>
+</div>
 
-    </div>
+<input type="checkbox" v-model="isBold">粗體
+<input type="checkbox" v-model="isItalic">斜體
+<input type="checkbox" v-model="isUnder">下底線
+<button @click="fontSize+=2">A+</button>
+<button @click="fontSize-=2">A-</button>
+<input type="color" v-model="fontColor" />
+<p :class="{bold:isBold, underline:isUnder, italic:isItalic }" 
+   :style="{fontSize:`${fontSize}px`, color:fontColor}">樣式套用</p>
 </template>
 
 <style lang="css" scoped>
-
+  .bold{
+    font-weight: bold;
+  }
+  .underline{
+    text-decoration: underline;
+  }
+  .italic{
+    font-style: italic;
+  }
 </style>

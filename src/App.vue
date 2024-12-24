@@ -1,5 +1,6 @@
 <script setup>
 import BindingComponent from './components/BindingComponent.vue';
+import BMIComponent from './components/BMIComponent.vue';
 import ComputedDemo from './components/ComputedDemo.vue';
 import FirstComponent from './components/FirstComponent.vue';
 import MyComponent from './components/MyComponent.vue';
@@ -13,8 +14,9 @@ import WatchDemo from './components/WatchDemo.vue';
 
 <template>
  <h2>Hello Vue!!!!!</h2>
- <WatchDemo></WatchDemo>
- <!--<ComputedDemo></ComputedDemo>
+ <BMIComponent></BMIComponent>
+ <!--<WatchDemo></WatchDemo>
+ <ComputedDemo></ComputedDemo>
 <BindingComponent></BindingComponent>
  <MyComponent></MyComponent>
  <FirstComponent></FirstComponent>

@@ -5,6 +5,7 @@ import ContactView from "./views/ContactView.vue";
 import Team1View from "./views/Team1View.vue";
 import Team2View from "./views/Team2View.vue";
 import MemberView from "./views/MemberView.vue";
+import NotFound from "./views/NotFound.vue";
 
 //路由設定
 //URL => Component
@@ -26,7 +27,8 @@ const routes = [
     //http://localhost:5173/contact => ContactView.vue
     { path: "/contact", component: ContactView, name: "contact" },
     //http://localhost:5173/member/參數 => MemberView.vue
-    { path: "/member/:id", component: MemberView, name: "member", props: true }
+    { path: "/member/:id", component: MemberView, name: "member", props: true },
+    { path: '/:pathMatch(.*)*', component: NotFound }
 ]
 
 const router = createRouter({

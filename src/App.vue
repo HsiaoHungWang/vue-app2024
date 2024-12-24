@@ -7,6 +7,9 @@ import MyComponent from './components/MyComponent.vue';
 
 import SecondComponent from './components/SecondComponent.vue';
 import WatchDemo from './components/WatchDemo.vue';
+import AboutView from './views/AboutView.vue';
+import ContactView from './views/ContactView.vue';
+import HomeView from './views/HomeView.vue';
 
 
 
@@ -14,8 +17,11 @@ import WatchDemo from './components/WatchDemo.vue';
 
 <template>
  <h2>Hello Vue!!!!!</h2>
- <BMIComponent></BMIComponent>
- <!--<WatchDemo></WatchDemo>
+ <HomeView></HomeView>
+ <AboutView></AboutView>
+ <ContactView></ContactView>
+  <!--<BMIComponent></BMIComponent>
+<WatchDemo></WatchDemo>
  <ComputedDemo></ComputedDemo>
 <BindingComponent></BindingComponent>
  <MyComponent></MyComponent>

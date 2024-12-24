@@ -7,11 +7,11 @@ import ContactView from "./views/ContactView.vue";
 //URL => Component
 const routes = [
     //http://localhost:5173/ => HomeView.vue
-    { path: "/", component: HomeView },
+    { path: "/", component: HomeView, name: "home" },
     //http://localhost:5173/about => AboutView.vue
-    { path: "/about", component: AboutView },
+    { path: "/about", component: AboutView, name: "about" },
     //http://localhost:5173/contact => ContactView.vue
-    { path: "/contact", component: ContactView },
+    { path: "/contact", component: ContactView, name: "contact" },
     // { path: "/register", component: RegisterView }
 ]
 

@@ -24,7 +24,10 @@
           
           <RouterLink :to="{name:'contact'}" class="nav-link">聯絡我們</RouterLink>
         </li>
-       
+        <li class="nav-item">       
+          
+          <RouterLink :to="{name:'member', params:{id:'20'}}" class="nav-link">會員中心</RouterLink>
+        </li>
       </ul>
     </div>
   </div>

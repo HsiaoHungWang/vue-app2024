@@ -4,15 +4,18 @@ import AboutView from "./views/AboutView.vue";
 import ContactView from "./views/ContactView.vue";
 import Team1View from "./views/Team1View.vue";
 import Team2View from "./views/Team2View.vue";
+import MemberView from "./views/MemberView.vue";
 
 //路由設定
 //URL => Component
 const routes = [
     //http://localhost:5173/ => HomeView.vue
-    { path: "/", component: HomeView, name: "home" },
-    //http://localhost:5173/about => AboutView.vue
+    //http://localhost:5173/home => HomeView.vue
+    { path: "/", component: HomeView, name: "home", alias: '/home' },
+    //http://localhost:5173/about => /about/team1 => AboutView.vue Team1View.vue
     {
         path: "/about", component: AboutView, name: "about",
+        redirect: '/about/team1',
         children: [
             //http://localhost:5173/about/team1 => Team1View.vue
             { path: 'team1', component: Team1View, name: "team1" },
@@ -22,7 +25,8 @@ const routes = [
     },
     //http://localhost:5173/contact => ContactView.vue
     { path: "/contact", component: ContactView, name: "contact" },
-    // { path: "/register", component: RegisterView }
+    //http://localhost:5173/member/參數 => MemberView.vue
+    { path: "/member/:id", component: MemberView, name: "member", props: true }
 ]
 
 const router = createRouter({

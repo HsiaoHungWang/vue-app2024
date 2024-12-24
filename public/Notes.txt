@@ -152,6 +152,29 @@ BMI計算
 4. 顯示計算完的結果 Vue
 
 
+http://localhost:8080  /api/abc  => 程式
+
+/api/spot/categories   => SpotContoller/findCategories
+
+/home => HomeComponent.vue
+/about => AboutComponent.vue
+
+https://www.ispan.com.tw
+https://www.ispan.com.tw/
+
+FirstComponent.vue
+App.vue
+
+1. <FirstComponent> </FirstComponent>
+
+2. 路由比對載入Component
+ http://...../about
+ <RouterView></RouterView>
+
+
+
+
+
 
 
 

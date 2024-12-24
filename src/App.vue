@@ -15,6 +15,7 @@ import AboutView from './views/AboutView.vue';
 import ContactView from './views/ContactView.vue';
 import HomeView from './views/HomeView.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
+import DirectiveComponent from './components/DirectiveComponent.vue';
 
 
 
@@ -32,7 +33,10 @@ import NavbarComponent from './components/NavbarComponent.vue';
  <!--是一個容器，根據路由，載入不同的Component-->
  <RouterView></RouterView>
 
-
+<hr />
+<div>
+    <DirectiveComponent></DirectiveComponent>
+</div>
 
 
 
@@ -43,10 +47,12 @@ import NavbarComponent from './components/NavbarComponent.vue';
   <BMIComponent></BMIComponent>
 <WatchDemo></WatchDemo>
  <ComputedDemo></ComputedDemo>
-<BindingComponent></BindingComponent>
+
  <MyComponent></MyComponent>
  <FirstComponent></FirstComponent>
-<SecondComponent></SecondComponent>  -->
+<SecondComponent></SecondComponent>  
+<BindingComponent></BindingComponent>-->
+
 </div>
 
 

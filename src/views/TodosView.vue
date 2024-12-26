@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const newTodo = ref('')
 const todos = ref(
@@ -29,6 +29,22 @@ const removeTodo = todo => {
     //用Array.splice(index, delcount)
     todos.value.splice(idx, 1)
 }
+
+//取得未完成待辦事項的數量
+const remaining = computed(() => {
+    const newTodos = todos.value.filter(todo => !todo.completed)
+    return newTodos.length
+})
+
+//刪除所有已完成的待辦事項
+const removeCompleted = () => {
+    for (let i = todos.value.length - 1; i >= 0; i--) {
+        //completed為true就是要刪除這筆資料
+        if (todos.value[i].completed) {
+            todos.value.splice(i, 1)
+        }
+    }
+}
 </script>
 
 <template>
@@ -48,6 +64,11 @@ const removeTodo = todo => {
                     <button @click="removeTodo(todo)" class="badge text-bg-danger rounded-pill">X</button>
                 </li>
             </ol>
+            <div class="mt-3 d-flex justify-content-between">
+                <strong class=" me-3">尚有 {{ remaining }} 個工作未完成</strong>
+                <button class="btn btn-warning me-3" @click="removeCompleted">清除完成工作</button>
+            </div>
+
         </div>
         <div class="col-3">
         </div>

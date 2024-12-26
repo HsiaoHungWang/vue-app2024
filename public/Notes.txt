@@ -171,6 +171,31 @@ App.vue
  http://...../about
  <RouterView></RouterView>
 
+VirtualDOM => ActualDOM
+
+Day3
+Vue-Router
+1.安裝套件
+2.路由設定檔router.js
+3.main.js引用router.js
+4,5. <RouterView><RouterLink>
+
+使用 bootstrap
+1. 安裝 bootstrap
+2. 引用 index.html(CDN)、main.js、app.vue  <= components
+
+Vue Directive (Angular)
+v-text、v-html
+v-if、v-show
+v-for
+v-bind [:]、v-model、v-on [@]
+:style、:class
+
+jQuery、Angular、React、Vue => JavaScript
+
+Ajax
+$.ajax()  => XMLHTTPRequest、fetch
+axios => XMLHTTPRequest、fetch
 
 
 

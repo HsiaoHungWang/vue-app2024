@@ -1,5 +1,6 @@
 <script setup>
 import TodoAdd from '@/components/TodoAdd.vue';
+import TodoFooter from '@/components/TodoFooter.vue';
 import { computed, ref } from 'vue';
 
 
@@ -37,7 +38,7 @@ const remaining = computed(() => {
 })
 
 //刪除所有已完成的待辦事項
-const removeCompleted = () => {
+const removeCompletedHandler = () => {
     for (let i = todos.value.length - 1; i >= 0; i--) {
         //completed為true就是要刪除這筆資料
         if (todos.value[i].completed) {
@@ -65,10 +66,8 @@ const removeCompleted = () => {
                     <button @click="removeTodo(todo)" class="badge text-bg-danger rounded-pill">X</button>
                 </li>
             </ol>
-            <div class="mt-3 d-flex justify-content-between">
-                <strong class=" me-3">尚有 {{ remaining }} 個工作未完成</strong>
-                <button class="btn btn-warning me-3" @click="removeCompleted">清除完成工作</button>
-            </div>
+            <!--父組件透過自訂的total屬性，把資料傳給子組件-->
+            <TodoFooter :total="remaining" @removeCompleted="removeCompletedHandler"></TodoFooter>
 
         </div>
         <div class="col-3">

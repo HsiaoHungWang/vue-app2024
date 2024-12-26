@@ -1,10 +1,18 @@
 <script setup>
 import { ref } from 'vue';
 
+//定義父組件傳過來的事件
+const emit = defineEmits(['todoAdd'])
+
+
 const newTodo = ref('')
 
 const enterHandler = () => {
-    alert(newTodo.value)
+    // alert(newTodo.value)
+
+    //觸發事件
+    emit('todoAdd', newTodo.value)
+
     clearHandler()
 }
 

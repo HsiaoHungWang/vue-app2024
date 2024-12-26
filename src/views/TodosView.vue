@@ -14,12 +14,13 @@ const todos = ref(
 const uniqueId = () => Date.now().toString(36) + Math.random().toString(36).substring(2, 9);
 
 //新增待辦事項
-/*
-const enterHandler = () => {
-    todos.value.push({ "id": uniqueId(), "title": newTodo.value, "completed": false })
-    clearHandler()
+//todo 會收到子組件傳過來的資料
+const todoAddHandler = todo => {
+
+    todos.value.push({ "id": uniqueId(), "title": todo, "completed": false })
+
 }
-*/
+
 
 //刪除待辦事項
 const removeTodo = todo => {
@@ -51,7 +52,9 @@ const removeCompleted = () => {
         <div class="col-3"></div>
         <div class="col-6">
             <h2>代辦事項</h2>
-            <TodoAdd></TodoAdd>
+            <!--將自訂事件傳到TodoAdd.vue(子組件)-->
+            <!--再由子組件觸發此事件，並將資料傳到父組件-->
+            <TodoAdd @todoAdd="todoAddHandler"></TodoAdd>
             <ol class="list-group list-group-numbered">
                 <li v-for="todo in todos" :key="todo.id"
                     class="list-group-item d-flex justify-content-between align-items-start">

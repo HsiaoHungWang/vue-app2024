@@ -203,6 +203,21 @@ JavaScript 陣列方法
 找到 ... 在陣列中的位置(index) Array.indexOf(...)
 把 ()=>{} 程式中回傳true的陣列資料放進前面的陣列變數中 const newArray = Array.filter(()=>{ return true})
 
+建立了一個Component
+MyComponent.vue
+
+怎麼使用Component
+1. App.vue components folder
+import MyComponent from '@/components/MyComponent'
+<MyComponent></MyComponent>
+
+2. App.vue  views folder
+Vue-Router
+http://localhost:5173/my => MyComponent.vue => <RouterView></RouterView>
+
+3. <component> 元素動態載入不同的component
+
+
 
 
 

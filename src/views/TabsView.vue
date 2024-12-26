@@ -10,18 +10,31 @@ const tabs = ref([
     { name: 'Second', component: SecondComponent },
     { name: 'BMI', component: BMIComponent }
 ])
-const currentTab = ref(FirstComponent)
+
+const currentIndex = ref(0)
+const currentTab = ref(tabs.value[0].component)
+
+const mouseenterHandler = idx => {
+    currentIndex.value = idx
+    currentTab.value = tabs.value[idx].component
+}
+
 
 const items = [FirstComponent, SecondComponent]
 const activeIndex = ref(0)
+
+
 </script>
 
 <template>
     <div>
         <h2>Tabs</h2>
         <ul class="nav nav-tabs">
-            <li class="nav-item" v-for="tab in tabs" :key="tab.name">
-                <a class="nav-link active" href="#" @mouseenter="currentTab = tab.component">{{ tab.name }}</a>
+            <li class="nav-item" v-for="(tab, index) in tabs" :key="tab.name">
+                <a class="nav-link" :class="{ active: currentIndex === index }" href="#"
+                    @mouseenter="mouseenterHandler(index)">{{
+                        tab.name
+                    }}</a>
             </li>
         </ul>
         <component :is="currentTab"></component>

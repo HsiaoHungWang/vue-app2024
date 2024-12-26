@@ -36,8 +36,8 @@ import EventModifiers from './components/EventModifiers.vue';
 
 <hr />
 <div>
-    <!-- <DirectiveComponent></DirectiveComponent> -->
-     <EventModifiers></EventModifiers>
+    <!-- <DirectiveComponent></DirectiveComponent>
+     <EventModifiers></EventModifiers> -->
 </div>
 
 

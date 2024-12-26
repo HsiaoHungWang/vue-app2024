@@ -26,6 +26,10 @@
         </li>
         <li class="nav-item">       
           
+          <RouterLink :to="{name:'todos'}" class="nav-link">代辦事項</RouterLink>
+        </li>
+        <li class="nav-item">       
+          
           <RouterLink :to="{name:'member', params:{id:'20'}}" class="nav-link">會員中心</RouterLink>
         </li>
       </ul>

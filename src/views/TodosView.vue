@@ -1,7 +1,8 @@
 <script setup>
+import TodoAdd from '@/components/TodoAdd.vue';
 import { computed, ref } from 'vue';
 
-const newTodo = ref('')
+
 const todos = ref(
     [
         { "id": "m21uwqfprb0ncx4", "title": "買菜", "completed": false },
@@ -13,14 +14,12 @@ const todos = ref(
 const uniqueId = () => Date.now().toString(36) + Math.random().toString(36).substring(2, 9);
 
 //新增待辦事項
+/*
 const enterHandler = () => {
     todos.value.push({ "id": uniqueId(), "title": newTodo.value, "completed": false })
     clearHandler()
 }
-//清除文字輸入方塊的內容
-const clearHandler = () => {
-    newTodo.value = ''
-}
+*/
 
 //刪除待辦事項
 const removeTodo = todo => {
@@ -52,8 +51,7 @@ const removeCompleted = () => {
         <div class="col-3"></div>
         <div class="col-6">
             <h2>代辦事項</h2>
-            <input v-model="newTodo" @keyup.enter="enterHandler" @keyup.delete="clearHandler" type="text"
-                class="form-control mb-3" autofocus placeholder="想做甚麼?" />
+            <TodoAdd></TodoAdd>
             <ol class="list-group list-group-numbered">
                 <li v-for="todo in todos" :key="todo.id"
                     class="list-group-item d-flex justify-content-between align-items-start">

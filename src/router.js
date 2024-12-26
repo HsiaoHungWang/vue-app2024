@@ -7,6 +7,7 @@ import Team2View from "./views/Team2View.vue";
 import MemberView from "./views/MemberView.vue";
 import NotFound from "./views/NotFound.vue";
 import TodosView from "./views/TodosView.vue";
+import TabsView from "./views/TabsView.vue";
 
 //路由設定
 //URL => Component
@@ -29,6 +30,8 @@ const routes = [
     { path: "/contact", component: ContactView, name: "contact" },
     //http://localhost:5173/todos => TodosView.vue
     { path: "/todos", component: TodosView, name: "todos" },
+    //http://localhost:5173/tabs => TabssView.vue
+    { path: "/tabs", component: TabsView, name: "tabs" },
     //http://localhost:5173/member/參數 => MemberView.vue
     { path: "/member/:id", component: MemberView, name: "member", props: true },
     { path: '/:pathMatch(.*)*', component: NotFound }

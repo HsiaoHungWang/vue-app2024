@@ -16,6 +16,7 @@ import ContactView from './views/ContactView.vue';
 import HomeView from './views/HomeView.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
 import DirectiveComponent from './components/DirectiveComponent.vue';
+import EventModifiers from './components/EventModifiers.vue';
 
 
 
@@ -35,7 +36,8 @@ import DirectiveComponent from './components/DirectiveComponent.vue';
 
 <hr />
 <div>
-    <DirectiveComponent></DirectiveComponent>
+    <!-- <DirectiveComponent></DirectiveComponent> -->
+     <EventModifiers></EventModifiers>
 </div>
 
 

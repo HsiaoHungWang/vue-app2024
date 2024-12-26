@@ -7,7 +7,7 @@ import { ref } from 'vue';
     // setTimeout(()=>{
     //    isLoading.value = false
     // },3000)
-const selectedOption = ref("")
+const selectedOption = ref("116")
     const regions = ref([
 { "name": "中山區", "code": 104 },
  { "name": "大安區", "code": 106 },
@@ -30,6 +30,8 @@ const fontColor = ref('black')
 const isBold = ref(false)
 const isUnder = ref(false)
 const isItalic = ref(false)
+
+const items = ref([])
 </script>
 
 <template>
@@ -72,6 +74,11 @@ const isItalic = ref(false)
 <input type="color" v-model="fontColor" />
 <p :class="{bold:isBold, underline:isUnder, italic:isItalic }" 
    :style="{fontSize:`${fontSize}px`, color:fontColor}">樣式套用</p>
+
+<input type="checkbox" value="i1" v-model="items">Item1
+<input type="checkbox" value="i2" v-model="items">Item2
+<input type="checkbox" value="i3" v-model="items">Item3
+<p>{{ items }}</p>
 </template>
 
 <style lang="css" scoped>

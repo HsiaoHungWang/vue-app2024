@@ -37,7 +37,9 @@ const activeIndex = ref(0)
                     }}</a>
             </li>
         </ul>
-        <component :is="currentTab"></component>
+        <KeepAlive>
+            <component :is="currentTab"></component>
+        </KeepAlive>
 
         <hr />
         <select v-model="activeIndex">

@@ -17,14 +17,16 @@ import HomeView from './views/HomeView.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
 import DirectiveComponent from './components/DirectiveComponent.vue';
 import EventModifiers from './components/EventModifiers.vue';
+import { ref } from 'vue';
 
 
+const show = ref(true)
 
 </script>
 
 <template>
     <div class="container">
-        <!-- <h2>Hello Vue!!!!!</h2> -->
+        <h2>Hello Vue!!!!!</h2>
         <NavbarComponent></NavbarComponent>
         <!-- <RouterLink to="/">首頁</RouterLink> | 
  <RouterLink to="/about">關於我們</RouterLink> | 
@@ -38,7 +40,11 @@ import EventModifiers from './components/EventModifiers.vue';
         <div>
             <!-- <DirectiveComponent></DirectiveComponent>
      <EventModifiers></EventModifiers> -->
-            <img class="img1" src="/images/loading.gif" alt="loading" />
+
+            <button @click="show = !show">Toggle</button>
+            <Transition name="img1">
+                <img v-if="show" src="/images/loading.gif" alt="loading" />
+            </Transition>
         </div>
 
 
@@ -62,14 +68,48 @@ import EventModifiers from './components/EventModifiers.vue';
 </template>
 
 <style scoped>
-h2 {
-    color: green
+/* 隱藏 */
+.img1-leave-from {
+    opacity: 1;
+    transform: translateX(0px);
 }
 
-.img1 {
-    /* scaleX(-1) rotate(180deg); */
-    transform: translateX(0px) rotate(0deg);
+.img1-leave-active,
+.img1-enter-active {
+    transition: all 3s ease;
+}
+
+.img1-leave-to {
+    opacity: 0;
+    transform: translate(200px);
+}
+
+/* 顯示 */
+.img1-enter-from {
+    opacity: 0;
+    transform: translate(200px) scaleX(-1);
+}
+
+/* .img1-enter-active {
+    transition: all 3s ease;
+} */
+
+.img-enter-to {
     opacity: 1;
+    transform: translate(0px) scaleX(-1);
+}
+
+
+h2 {
+    color: green;
+    opacity: 1;
+}
+
+/* scaleX(-1) rotate(180deg); */
+/* .img1 {
+   
+transform: translateX(0px) rotate(0deg);
+opacity: 1;
 }
 
 .img1:hover {
@@ -78,4 +118,6 @@ h2 {
 
     transition: all 3s;
 }
+
+*/
 </style>

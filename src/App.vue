@@ -18,6 +18,7 @@ import NavbarComponent from './components/NavbarComponent.vue';
 import DirectiveComponent from './components/DirectiveComponent.vue';
 import EventModifiers from './components/EventModifiers.vue';
 import { ref } from 'vue';
+import ParentComponent from './components/ParentComponent.vue';
 
 
 const show = ref(true)
@@ -37,6 +38,8 @@ const show = ref(true)
         <RouterView></RouterView>
 
         <hr />
+        <ParentComponent></ParentComponent>
+
         <div>
             <!-- <DirectiveComponent></DirectiveComponent>
      <EventModifiers></EventModifiers> -->

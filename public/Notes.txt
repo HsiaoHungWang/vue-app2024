@@ -197,6 +197,12 @@ Ajax
 $.ajax()  => XMLHTTPRequest、fetch
 axios => XMLHTTPRequest、fetch
 
+JavaScript 陣列方法
+新增 Array.push(...)
+刪除 Array.splice(從陣列中的哪一個位置(index)開始, 刪幾筆)
+找到 ... 在陣列中的位置(index) Array.indexOf(...)
+把 ()=>{} 程式中回傳true的陣列資料放進前面的陣列變數中 const newArray = Array.filter(()=>{ return true})
+
 
 
 

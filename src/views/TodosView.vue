@@ -21,6 +21,14 @@ const enterHandler = () => {
 const clearHandler = () => {
     newTodo.value = ''
 }
+
+//刪除待辦事項
+const removeTodo = todo => {
+    //先找到Array.indexOf()要刪除的這筆todo的index
+    const idx = todos.value.indexOf(todo)
+    //用Array.splice(index, delcount)
+    todos.value.splice(idx, 1)
+}
 </script>
 
 <template>
@@ -37,7 +45,7 @@ const clearHandler = () => {
                         <input type="checkbox" v-model="todo.completed" class="form-check-inpu me-3">
                         <label class="form-label" :class="{ completed: todo.completed }">{{ todo.title }}</label>
                     </div>
-                    <span class="badge text-bg-danger rounded-pill">X</span>
+                    <button @click="removeTodo(todo)" class="badge text-bg-danger rounded-pill">X</button>
                 </li>
             </ol>
         </div>

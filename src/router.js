@@ -8,6 +8,9 @@ import MemberView from "./views/MemberView.vue";
 import NotFound from "./views/NotFound.vue";
 import TodosView from "./views/TodosView.vue";
 import TabsView from "./views/TabsView.vue";
+import AdminView from "./views/AdminView.vue";
+import UserView from "./views/UserView.vue";
+import MemberMgmt from "./views/MemberMgmt.vue";
 
 //路由設定
 //URL => Component
@@ -32,6 +35,12 @@ const routes = [
     { path: "/todos", component: TodosView, name: "todos" },
     //http://localhost:5173/tabs => TabssView.vue
     { path: "/tabs", component: TabsView, name: "tabs" },
+    //http://localhost:5173/admin => AdminView.vue
+    { path: "/admin", component: AdminView, name: "admin" },
+    //http://localhost:5173/user => UserView.vue
+    { path: "/user", component: UserView, name: "user" },
+    //http://localhost:5173/mgmt => MemberMgmt.vue
+    { path: "/mgmt", component: MemberMgmt, name: "mgmt" },
     //http://localhost:5173/member/參數 => MemberView.vue
     { path: "/member/:id", component: MemberView, name: "member", props: true },
     { path: '/:pathMatch(.*)*', component: NotFound }

@@ -41,6 +41,10 @@ const todoStore = useTodoStore()
           </li>
           <li class="nav-item">
 
+            <RouterLink :to="{ name: 'mgmt' }" class="nav-link">會員管理</RouterLink>
+          </li>
+          <li class="nav-item">
+
             <RouterLink :to="{ name: 'member', params: { id: '20' } }" class="nav-link">會員中心</RouterLink>
           </li>
         </ul>

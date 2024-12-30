@@ -38,7 +38,7 @@ const show = ref(true)
         <RouterView></RouterView>
 
         <hr />
-        <FancyButton>
+        <!-- <FancyButton>
             <i class="bi bi-airplane"></i>
             <span class="mx-1">click</span>
         </FancyButton>
@@ -53,16 +53,16 @@ const show = ref(true)
         </FancyButton>
 
 
-        <ParentComponent></ParentComponent>
+        <ParentComponent></ParentComponent> -->
 
         <div>
             <!-- <DirectiveComponent></DirectiveComponent>
      <EventModifiers></EventModifiers> -->
 
-            <button @click="show = !show">Toggle</button>
+            <!-- <button @click="show = !show">Toggle</button>
             <Transition name="img1">
                 <img v-if="show" src="/images/loading.gif" alt="loading" />
-            </Transition>
+            </Transition> -->
         </div>
 
 

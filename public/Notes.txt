@@ -203,6 +203,9 @@ JavaScript 陣列方法
 找到 ... 在陣列中的位置(index) Array.indexOf(...)
 把 ()=>{} 程式中回傳true的陣列資料放進前面的陣列變數中 const newArray = Array.filter(()=>{ return true})
 
+
+Day4
+
 建立了一個Component
 MyComponent.vue
 
@@ -213,9 +216,53 @@ import MyComponent from '@/components/MyComponent'
 
 2. App.vue  views folder
 Vue-Router
-http://localhost:5173/my => MyComponent.vue => <RouterView></RouterView>
+http://localhost:5173
+router.js
+/my => MyComponent.vue => <RouterView></RouterView>
 
 3. <component> 元素動態載入不同的component
+
+component 之間的資料共用，怎麼做?
+1. 有關係 parent <> children 
+
+parent > data > child
+const data = ref(10)
+<ChildComponent :abc="data" xyz="from parent"></ChildComponent>
+
+ChildComponent.vue
+
+const props = defineProps({
+  abc:Number
+  xyz:String
+})
+
+abc+1
+
+<p>{{xyz}}</p>
+
+child > data > parent
+
+ParentComponent.vue
+const myEventHandler = data=>{
+alert(data)
+}
+<ChildComponent :abc="data"  @myEvent="myEventHandler" @aEvent="aEventHandler"></ChildComponent>
+
+ChildComponent.vue
+const emits = defineEmits(["myEvent", "aEvent"])
+
+emits("myEvent", 12)
+
+2. 沒關係
+ vuex 
+ pinia
+
+資料、顯示結構 <div><p>abcd</p></div> => 傳給子組件
+
+
+
+
+
 
 
 

@@ -10,13 +10,18 @@ import { computed, ref } from 'vue';
 // const datas = JSON.parse(localStorage.getItem('abc'))
 // console.log(datas[2])
 
-const todos = ref(
-    [
-        { "id": "m21uwqfprb0ncx4", "title": "買菜", "completed": false },
-        { "id": "m21w6x73hw2tvrc", "title": "看電視", "completed": true },
-        { "id": "m21w6x73hw2abcd", "title": "睡覺", "completed": false },
-    ]
-)
+// const todos = ref(
+//     [
+//         { "id": "m21uwqfprb0ncx4", "title": "買菜", "completed": false },
+//         { "id": "m21w6x73hw2tvrc", "title": "看電視", "completed": true },
+//         { "id": "m21w6x73hw2abcd", "title": "睡覺", "completed": false },
+//     ]
+// )
+//localStorage.setItem('todos', JSON.stringify(todos.value))
+
+const todos = ref(JSON.parse(localStorage.getItem('todos')))
+
+
 //取得唯一值
 const uniqueId = () => Date.now().toString(36) + Math.random().toString(36).substring(2, 9);
 

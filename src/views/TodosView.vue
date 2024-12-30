@@ -41,7 +41,6 @@ const removeTodo = todo => {
     const idx = todos.value.indexOf(todo)
     //用Array.splice(index, delcount)
     todos.value.splice(idx, 1)
-
 }
 
 //取得未完成待辦事項的數量

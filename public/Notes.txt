@@ -259,6 +259,9 @@ emits("myEvent", 12)
 
 資料、顯示結構 <div><p>abcd</p></div> => 傳給子組件
 
+儲存資料
+Server：DB、File、Session
+Client(瀏覽器)：Cookie、Storage(localStorage,sessionStroage)、IndexedDB
 
 
 

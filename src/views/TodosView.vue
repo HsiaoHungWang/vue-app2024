@@ -3,6 +3,12 @@ import TodoAdd from '@/components/TodoAdd.vue';
 import TodoFooter from '@/components/TodoFooter.vue';
 import { computed, ref } from 'vue';
 
+//將資料寫入localStorage 
+//JSON格式的資料寫入要透過 JSON
+// localStorage.setItem('abc', JSON.stringify(["a", "b", "c"]))
+//讀取 localStorage 資料資料
+// const datas = JSON.parse(localStorage.getItem('abc'))
+// console.log(datas[2])
 
 const todos = ref(
     [

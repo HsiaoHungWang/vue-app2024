@@ -51,8 +51,17 @@ const cancelHandler = () => {
 }
 
 //會員修改
-const updateHandler = () => {
-
+const updateHandler = async () => {
+    // console.log(member.value)
+    const response = await fetch(`${API_URL}/${member.value.memberId}`, {
+        method: 'PUT',
+        body: JSON.stringify(member.value),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    if (response.ok) {
+        cancelHandler()
+        loadMembers()
+    }
 }
 
 </script>

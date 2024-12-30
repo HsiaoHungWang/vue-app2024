@@ -2,6 +2,9 @@
 import TodoAdd from '@/components/TodoAdd.vue';
 import TodoFooter from '@/components/TodoFooter.vue';
 import { computed, ref, watchEffect } from 'vue';
+import { useTodoStore } from '@/stores/todo';
+const todoStore = useTodoStore()
+
 
 //將資料寫入localStorage 
 //JSON格式的資料寫入要透過 JSON
@@ -52,6 +55,11 @@ const remaining = computed(() => {
 //todos 響應式資料改變了就會執行watchEffect
 watchEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos.value))
+    //取得未完成待辦事項的數量
+    const newTodos = todos.value.filter(todo => !todo.completed)
+
+    //將未完成待辦事項數量傳給todoStore
+    todoStore.countRemaining(newTodos.length)
 })
 
 //刪除所有已完成的待辦事項

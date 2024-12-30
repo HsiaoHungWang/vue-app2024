@@ -1,4 +1,6 @@
 <script setup>
+import { useTodoStore } from '@/stores/todo';
+const todoStore = useTodoStore()
 
 </script>
 
@@ -29,7 +31,9 @@
           </li>
           <li class="nav-item">
 
-            <RouterLink :to="{ name: 'todos' }" class="nav-link">代辦事項</RouterLink>
+            <RouterLink :to="{ name: 'todos' }" class="nav-link">待辦事項<span class="badge text-bg-secondary">{{
+              todoStore.remaining }}</span>
+            </RouterLink>
           </li>
           <li class="nav-item">
 

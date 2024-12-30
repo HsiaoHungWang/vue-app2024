@@ -1,4 +1,8 @@
 <script setup>
+import { useTodoStore } from '@/stores/todo';
+const todoStore = useTodoStore()
+
+
 //定義父組件傳過來的參數
 const props = defineProps({
     total: Number
@@ -15,7 +19,7 @@ const clickHandler = () => {
 
 <template>
     <div class="mt-3 d-flex justify-content-between">
-        <strong class=" me-3">尚有 {{ total }} 個工作未完成</strong>
+        <strong class=" me-3">尚有 {{ todoStore.remaining }} 個工作未完成</strong>
         <button @click="clickHandler" class="btn btn-warning me-3">清除完成工作</button>
     </div>
 </template>

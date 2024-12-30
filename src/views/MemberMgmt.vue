@@ -1,4 +1,5 @@
 <script setup>
+import MemberAdd from '@/components/MemberAdd.vue'
 import { ref } from 'vue'
 
 const BASE_URL = import.meta.env.VITE_APIURL
@@ -69,48 +70,56 @@ const updateHandler = async () => {
 <template>
     <div>
         <h2>會員管理</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>編號 </th>
-                    <th>姓名 </th>
-                    <th>電子郵件 </th>
-                    <th>年紀</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="member in members" :key="member.memberId">
-                    <!--瀏覽模式-->
-                    <template v-if="member.isBrowse">
-                        <td>{{ member.memberId }}</td>
-                        <td>{{ member.name }}</td>
-                        <td>{{ member.email }}</td>
-                        <td>{{ member.age }}</td>
-                        <td>
-                            <button title="編輯" class="btn btn-secondary mx-3" @click="editHandler(member)">
-                                <i class="bi bi-pencil-square"></i></button>
-                            <button title="刪除" class="btn btn-danger" @click="removeHandler(member)">
-                                <i class="bi bi-trash-fill"></i></button>
-                        </td>
-                    </template>
-                    <!--編輯模式-->
-                    <template v-if="!member.isBrowse">
-                        <td>{{ member.memberId }}</td>
-                        <td><input type="text" v-model="member.name" /></td>
-                        <td><input type="text" v-model="member.email" /></td>
-                        <td><input type="text" v-model="member.age" /></td>
-                        <td>
-                            <button title="修改" @click="updateHandler" class="btn btn-primary mx-3"><i
-                                    class="bi bi-person-fill-add"></i></button>
-                            <button title="取消" @click="cancelHandler()" class="btn btn-warning">
-                                <i class="bi bi-person-fill-dash"></i></button>
-                        </td>
+        <div class="row">
+            <div class="col-8">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>編號 </th>
+                            <th>姓名 </th>
+                            <th>電子郵件 </th>
+                            <th>年紀</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="member in members" :key="member.memberId">
+                            <!--瀏覽模式-->
+                            <template v-if="member.isBrowse">
+                                <td>{{ member.memberId }}</td>
+                                <td>{{ member.name }}</td>
+                                <td>{{ member.email }}</td>
+                                <td>{{ member.age }}</td>
+                                <td>
+                                    <button title="編輯" class="btn btn-secondary mx-3" @click="editHandler(member)">
+                                        <i class="bi bi-pencil-square"></i></button>
+                                    <button title="刪除" class="btn btn-danger" @click="removeHandler(member)">
+                                        <i class="bi bi-trash-fill"></i></button>
+                                </td>
+                            </template>
+                            <!--編輯模式-->
+                            <template v-if="!member.isBrowse">
+                                <td>{{ member.memberId }}</td>
+                                <td><input type="text" v-model="member.name" /></td>
+                                <td><input type="text" v-model="member.email" /></td>
+                                <td><input type="text" v-model="member.age" /></td>
+                                <td>
+                                    <button title="修改" @click="updateHandler" class="btn btn-primary mx-3"><i
+                                            class="bi bi-person-fill-add"></i></button>
+                                    <button title="取消" @click="cancelHandler()" class="btn btn-warning">
+                                        <i class="bi bi-person-fill-dash"></i></button>
+                                </td>
 
-                    </template>
-                </tr>
-            </tbody>
-        </table>
+                            </template>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4">
+                <MemberAdd @loadMember="loadMembers"></MemberAdd>
+            </div>
+        </div>
+
     </div>
 </template>
 

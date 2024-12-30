@@ -6,6 +6,8 @@ const BASE_URL = import.meta.env.VITE_APIURL
 const API_URL = `${BASE_URL}/members` // "http://localhost:8080/api/members"
 
 const members = ref([])
+
+//讀取會員資料
 const loadMembers = async () => {
     const response = await fetch(API_URL)
     if (!response.ok) {
@@ -16,6 +18,22 @@ const loadMembers = async () => {
     }
 }
 loadMembers()
+
+
+//會員刪除
+const removeHandler = async (member) => {
+    if (window.confirm('真的要刪除嗎?')) {
+        //刪除 URL => http://localhost:8080/api/members/7
+        const response = await fetch(`${API_URL}/${member.memberId}`, {
+            method: 'DELETE'
+        })
+
+        if (response.ok) {
+            loadMembers()
+        }
+    }
+}
+
 </script>
 
 <template>
@@ -40,9 +58,8 @@ loadMembers()
                     <td>
                         <button title="編輯" class="btn btn-secondary mx-3">
                             <i class="bi bi-pencil-square"></i></button>
-                        <button title="刪除" class="btn btn-danger">
+                        <button title="刪除" class="btn btn-danger" @click="removeHandler(member)">
                             <i class="bi bi-trash-fill"></i></button>
-
                     </td>
                 </tr>
             </tbody>

@@ -11,6 +11,7 @@ import TabsView from "./views/TabsView.vue";
 import AdminView from "./views/AdminView.vue";
 import UserView from "./views/UserView.vue";
 import MemberMgmt from "./views/MemberMgmt.vue";
+import SpotsView from "./views/SpotsView.vue";
 
 //路由設定
 //URL => Component
@@ -35,6 +36,8 @@ const routes = [
     { path: "/todos", component: TodosView, name: "todos" },
     //http://localhost:5173/tabs => TabssView.vue
     { path: "/tabs", component: TabsView, name: "tabs" },
+    //http://localhost:5173/spots => SpotsView.vue
+    { path: "/spots", component: SpotsView, name: "spots" },
     //http://localhost:5173/admin => AdminView.vue
     { path: "/admin", component: AdminView, name: "admin" },
     //http://localhost:5173/user => UserView.vue

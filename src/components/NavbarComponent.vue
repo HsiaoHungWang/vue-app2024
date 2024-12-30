@@ -37,6 +37,11 @@ const todoStore = useTodoStore()
           </li>
           <li class="nav-item">
 
+            <RouterLink :to="{ name: 'spots' }" class="nav-link">台北市景點
+            </RouterLink>
+          </li>
+          <li class="nav-item">
+
             <RouterLink :to="{ name: 'tabs' }" class="nav-link">頁籤</RouterLink>
           </li>
           <li class="nav-item">

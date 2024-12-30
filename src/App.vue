@@ -19,7 +19,7 @@ import DirectiveComponent from './components/DirectiveComponent.vue';
 import EventModifiers from './components/EventModifiers.vue';
 import { ref } from 'vue';
 import ParentComponent from './components/ParentComponent.vue';
-
+import FancyButton from './components/FancyButton.vue';
 
 const show = ref(true)
 
@@ -38,6 +38,21 @@ const show = ref(true)
         <RouterView></RouterView>
 
         <hr />
+        <FancyButton>
+            <i class="bi bi-airplane"></i>
+            <span class="mx-1">click</span>
+        </FancyButton>
+        <FancyButton>
+            <i class="bi bi-apple"></i>
+            <span class="mx-1">apple</span>
+        </FancyButton>
+        <FancyButton>
+            <i class="bi bi-balloon"></i>
+            <span class="mx-1">balloon</span>
+
+        </FancyButton>
+
+
         <ParentComponent></ParentComponent>
 
         <div>

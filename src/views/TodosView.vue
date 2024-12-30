@@ -1,7 +1,7 @@
 <script setup>
 import TodoAdd from '@/components/TodoAdd.vue';
 import TodoFooter from '@/components/TodoFooter.vue';
-import { computed, ref } from 'vue';
+import { computed, ref, watchEffect } from 'vue';
 
 //將資料寫入localStorage 
 //JSON格式的資料寫入要透過 JSON
@@ -31,6 +31,7 @@ const todoAddHandler = todo => {
 
     todos.value.push({ "id": uniqueId(), "title": todo, "completed": false })
 
+
 }
 
 
@@ -40,12 +41,18 @@ const removeTodo = todo => {
     const idx = todos.value.indexOf(todo)
     //用Array.splice(index, delcount)
     todos.value.splice(idx, 1)
+
 }
 
 //取得未完成待辦事項的數量
 const remaining = computed(() => {
     const newTodos = todos.value.filter(todo => !todo.completed)
     return newTodos.length
+})
+
+//todos 響應式資料改變了就會執行watchEffect
+watchEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos.value))
 })
 
 //刪除所有已完成的待辦事項
@@ -56,6 +63,7 @@ const removeCompletedHandler = () => {
             todos.value.splice(i, 1)
         }
     }
+
 }
 </script>
 

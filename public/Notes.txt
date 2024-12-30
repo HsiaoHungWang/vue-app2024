@@ -264,6 +264,14 @@ Server：DB、File、Session
 Client(瀏覽器)：Cookie、Storage(localStorage,sessionStroage)、IndexedDB
 
 
+響應式的資料如果改變了
+computed => 計算 
+
+呼叫API、資料寫進localStorage、cookie..
+watch
+watchEffect
+
+
 
 
 
